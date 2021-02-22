@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Welcome in Feeder</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Tell me your name:</h3>
+  <form class="example-form" [formGroup]="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Your Name</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="userName"
+        placeholder="Ex. Patrick"
+      />
+      <mat-error *ngIf="form.controls['userName']?.hasError('required')">
+        You name can not be empty
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    [disabled]="form.controls['userName']?.valid ? null : true"
+    mat-button
+    (click)="saveDialog()"
+    cdkFocusInitial
+  >
+    Continue
+  </button>
+</mat-dialog-actions>

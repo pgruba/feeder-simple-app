@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row h-75">
+    <div class="col-md-12">
+      <app-list></app-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-form [userName]="userName"></app-form>
+    </div>
+  </div>
+</div>
+
+<div class="chat-button" *ngIf="formState$ | async">
+  <button mat-fab color="warn" (click)="chatButtonClick()">Chat</button>
+</div>

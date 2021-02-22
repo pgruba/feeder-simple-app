@@ -1,0 +1,6 @@
+<container-element [ngSwitch]="tag">
+  <span *ngSwitchCase="'user_input'" class="material-icons">chat</span>
+  <img *ngSwitchCase="'twitter'" src="./assets/twitter.png" />
+  <span *ngSwitchCase="'studio'" class="material-icons"> router </span>
+  <div *ngSwitchDefault>...</div>
+</container-element>

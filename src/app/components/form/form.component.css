@@ -1,0 +1,15 @@
+#feed-form {
+  position: fixed;
+  bottom: 0;
+  padding-left: 0;
+}
+
+#feed-form#feed-form-panel {
+  margin-left: 50px;
+}
+
+#form-panel-close {
+  right: 5px;
+  position: absolute;
+  cursor: pointer;
+}

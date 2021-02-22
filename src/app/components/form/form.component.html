@@ -1,0 +1,40 @@
+<div id="feed-form" class="container" *ngIf="!(formState$ | async)">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card id="feed-form-panel">
+        <span
+          id="form-panel-close"
+          class="material-icons"
+          (click)="hideFormClick()"
+        >
+          close
+        </span>
+        <span *ngIf="userName">{{ userName }} says:</span>
+        <form
+          class="example-form"
+          [formGroup]="feedForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <mat-form-field class="width-100">
+            <mat-label>Message</mat-label>
+            <input
+              type="text"
+              matInput
+              formControlName="content"
+              #contentInput
+            />
+          </mat-form-field>
+          <div>
+            <button
+              type="submit"
+              class="btn btn-primary mr-1"
+              [disabled]="feedForm.invalid"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
